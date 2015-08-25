@@ -1,6 +1,3 @@
-
-
-
 if (!defined('ABSPATH'))
 				exit;
 register_activation_hook(__FILE__, 'transit_score');
@@ -16,13 +13,13 @@ $lon = "-77.042613";
 $address = "Dupont Circle Washington,DC USA";
  */
 
-add_shortcode( 'TansistScore', 'gettansistScore' );
+add_shortcode( 'TransitScore', 'gettransitScore' );
 
 
- function gettansistScore($att) {
+ function gettransitScore($att) {
   $lat = $att['lat'];
   $lon = $att['lon'];
-  $url ="http://transit.walkscore.com/transit/score/?lat=$lat&lon=$lon&city=Washington&state=DC&wsapikey=yourwalkscoreapikey";
+  $url ="http://transit.walkscore.com/transit/score/?lat=$lat&lon=$lon&city=Washington&state=DC&wsapikey=5825b4ee1dbf24496437cabd8415ee71";
   $str = @file_get_contents($url); 
   $score = json_decode($str);
 $result = ' <div class="tansistScore">';
